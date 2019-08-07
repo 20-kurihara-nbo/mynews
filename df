@@ -1,0 +1,39 @@
+[33mcommit d100f4dc4f4c9ebc60177995aa80a3b38418cbcb[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: kurihara-nbo <kurihara.nbo@gmail.com>
+Date:   Thu Aug 1 05:39:37 2019 +0000
+
+    add resources/views/admin
+    
+    laravel 10 create.blade.phpのbladeファイルを作成。
+
+[33mcommit f76463f53a6d166a1e358d4b0abdde256b555d59[m[33m ([m[1;31morigin/master[m[33m)[m
+Author: kurihara-nbo <kurihara.nbo@gmail.com>
+Date:   Wed Jul 31 14:56:31 2019 +0000
+
+    fix parse error
+    
+    laravel 09 課題４の最後の行にセミコロンを追記
+
+[33mcommit 5b4fd3db944bd1747db60667bb088b8b7de0decc[m
+Author: kurihara-nbo <kurihara.nbo@gmail.com>
+Date:   Sun Jul 28 14:32:51 2019 +0000
+
+    add routing profilecontroller@add edit
+    
+    laravel09 課題をroutes/web.phpに記述しました。profilecontorollerにadd Actionとedit Actionを実装しました。
+
+[33mcommit 4db1cf22afeb524a242902b5b3ccb2e87c8b71d6[m
+Author: kurihara-nbo <kurihara.nbo@gmail.com>
+Date:   Sun Jul 28 13:25:14 2019 +0000
+
+    add make ProfileController
+    
+    アルチザンでプロフィールコントローラーを追加しました。またadd,create,edit,updateのアクションを実装しました。
+
+[33mcommit 6e9852d5f794112f5c84f2f5368f9a5012bf73ed[m
+Author: kurihara-nbo <kurihara.nbo@gmail.com>
+Date:   Thu Jul 25 12:00:44 2019 +0000
+
+    add make NewsController
+    
+    アルチザンでコントローラーを作成しました。ブログを投函したり、編集削除するためのコントローラーとして使用します。また、Actionを実装しました。
