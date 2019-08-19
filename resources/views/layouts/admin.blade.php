@@ -40,7 +40,11 @@
                         
                         <!-- Left side of navbar -->
                         <ul class="navbar-nav mr-auto">
-                        <!-- Authentication Links -->
+                        </ul>
+
+                        <!-- right side of navbar -->
+                        <ul class="navbar-nav ml-auto">
+                             <!-- Authentication Links -->
                             @guest
                                 <li><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
                             @else
@@ -62,10 +66,6 @@
                                     </div>
                                 </li>
                             @endguest
-                        </ul>
-                        
-                        <!-- right side of navbar -->
-                        <ul class="navbar-nav ml-auto">
                         </ul>
                     </div>
                 </div>
