@@ -15,8 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::group(['prefix' => 'admin', 'middleware' => 'auth'],function()
-{
+Route::group(['prefix' => 'admin', 'middleware' => 'auth'],function() {
     Route::get('news/create','Admin\NewsController@add');
     Route::post('news/create','Admin\NewsController@create');
 });
@@ -32,13 +31,14 @@ Actionへのroutingをまとめて記述する事ができるので、エラー�
 */
 
 //laravel09 課題３　
-Route::get('XXX','XXX\AAAController@BBB');
+//Route::get('XXX','XXX\AAAController@BBB');
 
 //laravel09 課題４
 Route::group(['prefix' => 'admin'],function()
 {
     Route::get('profile/create','Admin\ProfileController@add')->middleware('auth');
     Route::get('profile/edit','Admin\ProfileController@edit')->middleware('auth');
+    Route::post('profile/create','Admin\ProfileController@create');
 
 Auth::routes();
 
