@@ -60,7 +60,7 @@ class NewsController extends Controller
         return view('admin.news.index', ['posts' => $posts,'cond_title'=>$cond_title]);
         
     }
-    //editアクションを追加する。
+    //editアクションを追加する。編集画面です。
     public function edit(Request $request)
     {
         //News　Modelからデータを取得する。
@@ -71,7 +71,21 @@ class NewsController extends Controller
         return view('admin.news.edit', ['news_form' => $news]);
     }
     
-    
-    
+    //update Actionを追加。編集画面から送信されたフォームデータを処理する。
+    public function update(Request $request)
+    {
+        //Validationをかける
+        $this->validate($request, News::$rules);
+        //News Modelからデータを取得する
+        $news = News::find($request->id);
+        //送信されてきたフォームデータを格納する
+        $news_form = $request->all();
+        unset($news_form['_token']);
+        
+        //該当するデータを上書きして保存する
+        $news->fill($news_form)->save();
+        
+        return redirect('admin/news');
+    }
 }
     
