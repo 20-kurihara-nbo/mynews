@@ -53,12 +53,25 @@ class NewsController extends Controller
             //検索されたら検索結果を取得して代入。入力した文字に一致するレコードを全て取得。
             $posts=News::where('title', $cond_title)->get();
         } else {
-            //それ以外は全てニュースを取得する
+            //それ以外は全てのニュースを取得する
             $posts=News::all();
         }
         //Requestにcond_titleを送っている
         return view('admin.news.index', ['posts' => $posts,'cond_title'=>$cond_title]);
         
     }
+    //editアクションを追加する。
+    public function edit(Request $request)
+    {
+        //News　Modelからデータを取得する。
+        $news = News::find($request->id);
+        if (empty($news)) {
+            abort(404);
+        }
+        return view('admin.news.edit', ['news_form' => $news]);
+    }
+    
+    
+    
 }
     
