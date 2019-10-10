@@ -5,7 +5,7 @@
 @section('content')
     <div class="container">
         <div class="row">
-                <h2>ニュース新規作成</h2>
+                <h2>ニュース一覧</h2>
         </div>
         <div class="row">
             <div class="col-md-4">
@@ -27,7 +27,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="list-news col-md-12 mx-auto">
+            <div class="admin-news col-md-12 mx-auto">
                 <div class="row">
                     <table class="table table-dark">
                         <thead>
@@ -35,6 +35,7 @@
                                 <th width="10%">ID</th>
                                 <th width="20%">タイトル</th>
                                 <th width="50%">本文</th>
+                                <th width="10%">操作</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -43,6 +44,11 @@
                                     <th>{{ $news->id }}</th>
                                     <td>{{ str_limit($news->title,100) }}</td>
                                     <td>{{ str_limit($news->body,250) }}</td>
+                                    <td>
+                                        <div>
+                                            <a href="{{ action('Admin\NewsController@edit',['id' => $news->id]) }}">編集</a>
+                                        </div>
+                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>
