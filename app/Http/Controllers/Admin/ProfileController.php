@@ -5,6 +5,9 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
+//以下によりProfile Modelを扱えるように設定
+use App\Profile;
+
 class ProfileController extends Controller
 {
     //laravel08 コントローラーとルーティング　課題５
