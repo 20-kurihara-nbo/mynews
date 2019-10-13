@@ -24,7 +24,7 @@ class ProfileController extends Controller
         $profile = new Profile;
         $form = $request->all();
         
-        unset(form['_token']);
+        unset($form['_token']);
         
         $profile->fill($form);
         $profile->save();
