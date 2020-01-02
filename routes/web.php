@@ -49,3 +49,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 });
+
+//18章　フロントへのルーティングの設定
+Route::get('/','NewsController@index');
