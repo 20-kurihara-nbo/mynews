@@ -17,6 +17,6 @@ class Profile extends Model
     //profileeditモデルに関連付けを行う
     public function profileedit()
     {
-        return $this->hasmany('app\profileedit');
+        return $this->hasmany('App\profileedit');
     }
 }
