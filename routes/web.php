@@ -52,4 +52,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 //18章　フロントへのルーティングの設定
 Route::get('/','NewsController@index');
-Route::get('/','ProfileController@index');
+
+//18章　課題　プロフィールの描画へのルーティング設定
+Route::get('/profile','ProfileController@index');
