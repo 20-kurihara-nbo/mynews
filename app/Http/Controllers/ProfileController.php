@@ -17,16 +17,14 @@ class ProfileController extends Controller
     public function index(Request $request)
     {
         //データベースのProfilesから情報を取得
-        $posts = Profiles::all()->sortByDesc('update_at');
-        
-        if(count($posts) > 0) {
-            $headline = $posts->shift();
-        } else {
-            $headline = null;
-        }
+         //Profile　Modelからデータを取得する。
+        $profile = Profile::find($request->id);
+        if (empty($profile)) {
+            abort(404);
+            }
         
         //profile/index.blade.phpファイルを渡している
-        //またviewテンプレートにheadline,posts、という変数を渡している
-        return view('profile.index', ['headline' => $headline, 'posts' => $posts]);
+        //またviewテンプレートに$profileという変数を渡している
+        return view('profile.index', ['profile_form' => $profile]);
     }
 }
